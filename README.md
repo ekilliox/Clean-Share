@@ -23,7 +23,7 @@ That window belongs to the game process, so Discord also picks up the game audio
 2. Under **Custom Plugin Repositories**, paste:
 
    ```
-   https://raw.githubusercontent.com/ekilliox/PartagePropre/main/repo.json
+   https://raw.githubusercontent.com/ekilliox/screenshare-clean/main/repo.json
    ```
 
    tick **Enabled**, click **+** then **Save and Close**.
@@ -74,7 +74,7 @@ Cette fenêtre appartient au jeu, donc Discord prend aussi le son du jeu quand t
 2. Dans **Custom Plugin Repositories** (dépôts de plugins personnalisés), colle ce lien :
 
    ```
-   https://raw.githubusercontent.com/ekilliox/PartagePropre/main/repo.json
+   https://raw.githubusercontent.com/ekilliox/screenshare-clean/main/repo.json
    ```
 
    coche la case **Activé**, clique sur **+** puis **Sauvegarder et fermer**.
