@@ -55,6 +55,8 @@ dotnet build -c Release
 
 The package is created in `PartagePropre/bin/Release/PartagePropre/latest.zip`.
 
+**Automatic releases:** every push that changes `PartagePropre/` runs the GitHub Action, which builds the plugin (version `major.minor` from the csproj + build number) and updates `dist/latest.zip` and `repo.json`. Dalamud then updates the plugin for everyone.
+
 ## Français
 
 Plugin Dalamud pour **FINAL FANTASY XIV** : partage le jeu sur **Discord** **sans les fenêtres des plugins** (Dalamud / ImGui), avec le son du jeu.
@@ -105,3 +107,5 @@ dotnet build -c Release
 ```
 
 Le paquet est créé dans `PartagePropre/bin/Release/PartagePropre/latest.zip`.
+
+**Publication automatique :** chaque modification de `PartagePropre/` lance l'action GitHub, qui compile le plugin (version `majeur.mineur` du csproj + numéro de compilation) et met à jour `dist/latest.zip` et `repo.json`. Dalamud met ensuite le plugin à jour chez tout le monde.

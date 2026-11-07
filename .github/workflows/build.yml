@@ -1,0 +1,57 @@
+# Compile le plugin et publie la nouvelle version (dist/latest.zip + repo.json)
+# à chaque modification du code. Dalamud met ensuite à jour le plugin tout seul chez tout le monde.
+name: Build & publish
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "PartagePropre/**"
+      - ".github/workflows/build.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+
+      - name: Download Dalamud
+        run: |
+          curl -sSL -o dalamud.zip https://goatcorp.github.io/dalamud-distrib/latest.zip
+          mkdir -p "$HOME/dalamud" && unzip -q dalamud.zip -d "$HOME/dalamud"
+
+      - name: Build
+        env:
+          DALAMUD_HOME: ${{ env.HOME }}/dalamud
+        run: |
+          export DALAMUD_HOME="$HOME/dalamud"
+          # Version = <major>.<minor> du csproj + numéro de compilation, pour que Dalamud voie toujours une version plus récente.
+          BASE=$(grep -oP '(?<=<Version>)\d+\.\d+' PartagePropre/PartagePropre.csproj)
+          VERSION="$BASE.${{ github.run_number }}.0"
+          echo "Version : $VERSION"
+          cd PartagePropre
+          dotnet build -c Release -p:Version="$VERSION"
+
+      - name: Update repo.json and dist/latest.zip
+        run: python3 tools/update_repo.py "${{ github.repository }}"
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/latest.zip repo.json
+          if git diff --cached --quiet; then echo "Rien à publier"; exit 0; fi
+          git commit -m "Publication automatique [skip ci]"
+          git push
