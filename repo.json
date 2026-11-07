@@ -1,10 +1,10 @@
 [
   {
-    "Author": "Flo",
-    "Name": "Partage propre",
+    "Author": "ekilliox",
+    "Name": "Partage propre (Clean Share)",
     "InternalName": "PartagePropre",
-    "AssemblyVersion": "1.4.0.0",
-    "Description": "Ouvre une fenêtre « FFXIV Partage (sans menus) » qui affiche le jeu sans les fenêtres Dalamud. Partage cette fenêtre dans Discord : le son du jeu suit. Réglages : bouton Open dans /xlplugins",
+    "AssemblyVersion": "1.5.0.0",
+    "Description": "Opens a \"FFXIV Share (no menus)\" window that shows the game without Dalamud/plugin windows. Share that window in Discord (Applications tab): game audio comes with it. Settings: Open button in /xlplugins.\n\nOuvre une fenêtre « FFXIV Partage (sans menus) » qui affiche le jeu sans les fenêtres Dalamud. Partage-la dans Discord (onglet Applications) : le son du jeu suit. Réglages : bouton Open dans /xlplugins.",
     "ApplicableVersion": "any",
     "RepoUrl": "https://github.com/ekilliox/PartagePropre",
     "Tags": [
@@ -18,13 +18,13 @@
     "CanUnloadAsync": false,
     "LoadPriority": 0,
     "IconUrl": "https://raw.githubusercontent.com/ekilliox/PartagePropre/main/PartagePropre/images/icon.png",
-    "Punchline": "Partage FF14 sur Discord sans les fenêtres des plugins.",
+    "Punchline": "Share FFXIV on Discord without plugin windows. / Partage FF14 sur Discord sans les fenêtres des plugins.",
     "AcceptsFeedback": false,
     "DownloadLinkInstall": "https://raw.githubusercontent.com/ekilliox/PartagePropre/main/dist/latest.zip",
     "DownloadLinkUpdate": "https://raw.githubusercontent.com/ekilliox/PartagePropre/main/dist/latest.zip",
     "DownloadLinkTesting": "https://raw.githubusercontent.com/ekilliox/PartagePropre/main/dist/latest.zip",
     "IsHide": false,
     "IsTestingExclusive": false,
-    "LastUpdate": 1794087639
+    "LastUpdate": 1794087772
   }
 ]

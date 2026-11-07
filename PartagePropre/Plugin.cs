@@ -31,6 +31,7 @@ public sealed unsafe class Plugin : IDalamudPlugin
         this.chat = chat;
         this.log = log;
         this.config = pi.GetPluginConfig() as Config ?? new Config();
+        Loc.Fr = (pi.UiLanguage ?? string.Empty).StartsWith("fr", StringComparison.OrdinalIgnoreCase);
 
         this.window = new ShareWindow
         {
@@ -85,26 +86,26 @@ public sealed unsafe class Plugin : IDalamudPlugin
             if (this.mirror.LastError is { } err && err != this.lastLoggedError)
             {
                 this.lastLoggedError = err;
-                this.log.Error($"Partage propre : {err}");
-                this.chat.PrintError($"[Partage propre] Problème : {err}");
+                this.log.Error($"PartagePropre: {err}");
+                this.chat.PrintError(Loc.ErrorPrefix + err);
             }
         }
         catch (Exception e)
         {
-            this.log.Error(e, "Partage propre : erreur pendant la copie de l'image");
+            this.log.Error(e, "PartagePropre: error while copying the frame");
         }
     }
 
     private void DrawSettings()
     {
         ImGui.SetNextWindowSize(new Vector2(420, 0), ImGuiCond.FirstUseEver);
-        if (ImGui.Begin("Partage propre", ref this.settingsOpen, ImGuiWindowFlags.AlwaysAutoResize))
+        if (ImGui.Begin(Loc.SettingsTitle + "###PartagePropreSettings", ref this.settingsOpen, ImGuiWindowFlags.AlwaysAutoResize))
         {
-            ImGui.TextWrapped("Dans Discord : Partager l'écran > Applications > « FFXIV Partage (sans menus) ».");
+            ImGui.TextWrapped(Loc.HowTo);
             ImGui.Separator();
 
             var enabled = this.config.ShareEnabled;
-            if (ImGui.Checkbox("Fenêtre de partage active", ref enabled))
+            if (ImGui.Checkbox(Loc.Enabled, ref enabled))
             {
                 this.config.ShareEnabled = enabled;
                 this.mirror.ClearError();
@@ -114,24 +115,24 @@ public sealed unsafe class Plugin : IDalamudPlugin
             }
 
             var off = this.config.OffScreen;
-            if (ImGui.Checkbox("Cacher la fenêtre hors de l'écran", ref off))
+            if (ImGui.Checkbox(Loc.OffScreen, ref off))
             {
                 this.config.OffScreen = off;
                 this.window.OffScreen = off;
                 this.Save();
             }
 
-            ImGui.TextDisabled("Décoche si l'image est noire ou figée dans Discord.");
+            ImGui.TextDisabled(Loc.OffScreenHint);
 
             var tb = this.config.HideTaskbar;
-            if (ImGui.Checkbox("Cacher le bouton dans la barre des tâches", ref tb))
+            if (ImGui.Checkbox(Loc.Taskbar, ref tb))
             {
                 this.config.HideTaskbar = tb;
                 this.window.HideTaskbarButton = tb;
                 this.Save();
             }
 
-            ImGui.TextDisabled("Décoche si Discord ne trouve plus la fenêtre.");
+            ImGui.TextDisabled(Loc.TaskbarHint);
         }
 
         ImGui.End();

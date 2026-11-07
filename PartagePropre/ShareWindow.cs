@@ -11,7 +11,7 @@ namespace PartagePropre;
 /// </summary>
 internal sealed unsafe class ShareWindow : IDisposable
 {
-    public const string Title = "FFXIV Partage (sans menus)";
+    public static string Title => Loc.WindowTitle;
 
     private const uint WM_CLOSE = 0x0010;
     private const uint WM_APP_SHOW = 0x8001;

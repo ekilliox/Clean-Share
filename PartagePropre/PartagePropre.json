@@ -1,8 +1,8 @@
 {
-  "Author": "Flo",
-  "Name": "Partage propre",
-  "Punchline": "Partage FF14 sur Discord sans les fenêtres des plugins.",
-  "Description": "Ouvre une fenêtre « FFXIV Partage (sans menus) » qui affiche le jeu sans les fenêtres Dalamud. Partage cette fenêtre dans Discord : le son du jeu suit. Réglages : bouton Open dans /xlplugins",
+  "Author": "ekilliox",
+  "Name": "Partage propre (Clean Share)",
+  "Punchline": "Share FFXIV on Discord without plugin windows. / Partage FF14 sur Discord sans les fenêtres des plugins.",
+  "Description": "Opens a \"FFXIV Share (no menus)\" window that shows the game without Dalamud/plugin windows. Share that window in Discord (Applications tab): game audio comes with it. Settings: Open button in /xlplugins.\n\nOuvre une fenêtre « FFXIV Partage (sans menus) » qui affiche le jeu sans les fenêtres Dalamud. Partage-la dans Discord (onglet Applications) : le son du jeu suit. Réglages : bouton Open dans /xlplugins.",
   "Tags": [
     "discord",
     "stream",

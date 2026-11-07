@@ -182,7 +182,7 @@ internal sealed unsafe class Mirror : IDisposable
     private bool Fail(int hr, string what)
     {
         if (hr >= 0) return false;
-        this.LastError = $"{what} a échoué (0x{hr:X8})";
+        this.LastError = Loc.Failed(what, hr);
         return true;
     }
 
