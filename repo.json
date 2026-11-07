@@ -3,7 +3,7 @@
     "Author": "ekilliox",
     "Name": "Partage propre (Clean Share)",
     "InternalName": "PartagePropre",
-    "AssemblyVersion": "1.5.0.0",
+    "AssemblyVersion": "1.6.1.0",
     "Description": "Opens a \"FFXIV Share (no menus)\" window that shows the game without Dalamud/plugin windows. Share that window in Discord (Applications tab): game audio comes with it. Settings: Open button in /xlplugins.\n\nOuvre une fenêtre « FFXIV Partage (sans menus) » qui affiche le jeu sans les fenêtres Dalamud. Partage-la dans Discord (onglet Applications) : le son du jeu suit. Réglages : bouton Open dans /xlplugins.",
     "ApplicableVersion": "any",
     "RepoUrl": "https://github.com/ekilliox/Clean-Share",
@@ -25,6 +25,6 @@
     "DownloadLinkTesting": "https://raw.githubusercontent.com/ekilliox/Clean-Share/main/dist/latest.zip",
     "IsHide": false,
     "IsTestingExclusive": false,
-    "LastUpdate": 1794088501
+    "LastUpdate": 1794091703
   }
 ]
