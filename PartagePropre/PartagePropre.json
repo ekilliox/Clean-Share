@@ -1,0 +1,13 @@
+{
+  "Author": "Flo",
+  "Name": "Partage propre",
+  "Punchline": "Partage FF14 sur Discord sans les fenêtres des plugins.",
+  "Description": "Ouvre une fenêtre « FFXIV Partage (sans menus) » qui affiche le jeu sans les fenêtres Dalamud. Partage cette fenêtre dans Discord : le son du jeu suit. Réglages : bouton Open dans /xlplugins",
+  "Tags": [
+    "discord",
+    "stream",
+    "partage"
+  ],
+  "RepoUrl": "https://github.com/ekilliox/PartagePropre",
+  "IconUrl": "https://raw.githubusercontent.com/ekilliox/PartagePropre/main/PartagePropre/images/icon.png"
+}
